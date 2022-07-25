@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Striped Progress bar </h4>
+                <div class="progress m-t-20">
+                    <div class="progress-bar bg-info active progress-bar-striped" style="height:5px;" [style.width]="getProgreso1" role="progressbar">
+                                
+                    </div>
+                </div>
+                <div class="progress m-t-20">
+                    <div class="progress-bar bg-info active progress-bar-striped" style="height:5px;" [style.width]="getProgreso2" role="progressbar">
+                                <!-- [style.width]="getProgreso2" permite cambiar la barra de progreso -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <app-incremetador (outputValue)=" progreso1=$event" [valor]="progreso1"></app-incremetador><!-- componente incrementador asignando a valor el valor de 15 -->
+                <!-- los parentesis () generan un evento, en este caso el evento outputValue -->
+                <!-- las llaves cuadradas [] son para enviar datos a los componentes. -->
+                <!-- progreso1=$event permite que el atributo progreso1 recibe el evento, en este caso el tipo de valor del evento es el que emite outputValue -->
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <app-incremetador (outputValue)=" progreso2=$event" [valor]="progreso2" [btnClass]="'btn-info'"></app-incremetador>
+                <!--  "'btn btn-info'" se realiza así porque javaScript no permite guiones-->
+            </div>
+        </div>
+    </div>
+</div>
