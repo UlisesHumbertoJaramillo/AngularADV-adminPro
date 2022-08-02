@@ -26,7 +26,10 @@
                             class="mdi mdi-gauge"></i><span class="hide-menu">{{item.title}} <span
                                 class="label label-rouded label-themecolor pull-right">{{item.subMenu.length}}</span></span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li *ngFor="let subItem of item.subMenu"><a [routerLink]="subItem.url">{{subItem.title}} </a></li>
+                        <li *ngFor="let subItem of item.subMenu"><a [routerLink]="subItem.url"
+                                                                    routerLinkActive="active"
+                                                                    [routerLinkActiveOptions]="{exact:true}">{{subItem.title}} </a></li>
+                                                                    <!--  routerLinkActive="active"  Permite que esté resaltado cuando es seleccionado  //  [routerLinkActiveOptions]="{exact:true} para que la ruta seleccionada sea exacta-->
                     </ul>
                 </li> 
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
